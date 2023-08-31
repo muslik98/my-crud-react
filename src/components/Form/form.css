@@ -1,0 +1,7 @@
+.form-container {
+    align-items: end;
+}
+
+.input-container {
+    display: flex;
+}

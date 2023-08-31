@@ -1,0 +1,6 @@
+.new-button, .delete-button {
+    width: auto;
+    height: min-content;
+    padding: 0.3rem 1.5rem;
+    background-color: grey;
+}

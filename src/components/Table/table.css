@@ -1,0 +1,30 @@
+.table-container {
+    margin-top: 1.5rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: gray;
+  }
+  
+  /* Apply alternate background color to rows for better readability */
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
