@@ -3,13 +3,13 @@ import './button.css'
 
 function NewButton() {
     return (
-        <Button:submit className="new-button">New</Button:submit>
+        <button type='submit' className="new-button">New</button>
     )
 }
 
 function DeleteButton() {
     return (
-        <Button:submit className="delete-button">Delete</Button:submit>
+        <button type='submit' className="delete-button">Delete</button>
     )
 }
 
