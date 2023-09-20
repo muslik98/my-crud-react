@@ -88,8 +88,6 @@
 
         const submitHandler = (event) => {
             event.preventDefault();
-            console.log('props', props);
-
             const formObject = {
                 ...formValues
             };

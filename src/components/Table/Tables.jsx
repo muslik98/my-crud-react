@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NewButton, DeleteButton } from './common/TableButton';
 import './table.css';
 import TableItem from './TableItem';
+import TablesFilter from './TablesFilter';
 
 export default function Table(props) {
-  
+  const [statusFilter, setStatusFilter] = useState('Open');
+
+  const filterHandler = filter => {
+    setStatusFilter(filter);
+  }
+
   return (
     <div className='table-container'>
       <div className='button-container'>
         <NewButton className='new-button' />
         <DeleteButton className='delete-button' />
+        <TablesFilter selected={statusFilter} onChangeFilter={filterHandler} />
       </div>
       <table className='data-table'>
         <thead>
@@ -24,13 +31,17 @@ export default function Table(props) {
           </tr>
         </thead>
         <tbody>
-          <TableItem
-            projectName={props.items[0].projectName}
-            client={props.items[0].client}
-            startDate={props.items[0].startDate}
-            endDate={props.items[0].endDate}
-            status={props.items[0].status}
-          />
+          {
+            props.items.map(item => 
+              <TableItem
+                key={item.id}
+                projectName={item.projectName}
+                clientName={item.clientName}
+                startDate={item.startDate}
+                endDate={item.endDate}
+                status={item.status}
+              />)
+          }
         </tbody>
       </table>
     </div>

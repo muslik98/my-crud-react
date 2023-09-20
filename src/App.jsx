@@ -5,24 +5,33 @@ import Form from './components/Form/Form'
 import './app.css'
 import NewForm from './components/Form/NewForm'
 
+const projects = [
+  {
+    id: 'p1',
+    projectName: 'projek 1',
+    clientName: 'udin',
+    startDate: '2023-01-09',
+    endDate: '2024-01-09',
+    status: 'ongoing'
+  },
+  {
+    id: 'p2',
+    projectName: 'projek 2',
+    clientName: 'mus',
+    startDate: '2022-01-09',
+    endDate: '2023-01-09',
+    status: 'ongoing'
+  }
+];
+
 function App() {
 
-  const project = [
-    {
-      id: 'p1',
-      projectName: 'projek 1',
-      client: 'udin',
-      startDate: '2023-01-09',
-      endDate: '2024-01-09',
-      status: 'ongoing'
-    }
-  ];
+  const [project, setProject] = useState(projects);
 
   const getNewForm = (form) => {
-    const appForm = {
-      ...form
-    };
-    console.log('App.jsx', form);
+    setProject(prevProject => {
+      return [form, ...prevProject]
+    })
   };
 
   return (
