@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { NewButton, DeleteButton } from './common/TableButton';
-import './table.css';
-import TableItem from './TableItem';
 import TablesFilter from './TablesFilter';
+import TablesList from './TablesList';
+import './table.css';
 
 export default function Table(props) {
   const [statusFilter, setStatusFilter] = useState('Open');
@@ -10,6 +10,24 @@ export default function Table(props) {
   const filterHandler = filter => {
     setStatusFilter(filter);
   }
+
+  const filterForm = props.items.filter(form => {
+    return form.status.toString() === statusFilter;
+  })
+
+  // let tablesContent = <p>Tidak ada content</p>
+
+  // if (filterForm.length > 0) {
+  //   tablesContent = filterForm.map(item => 
+  //     <TableItem
+  //       key={item.id}
+  //       projectName={item.projectName}
+  //       clientName={item.clientName}
+  //       startDate={item.startDate}
+  //       endDate={item.endDate}
+  //       status={item.status}
+  //     />)    
+  // }
 
   return (
     <div className='table-container'>
@@ -32,15 +50,7 @@ export default function Table(props) {
         </thead>
         <tbody>
           {
-            props.items.map(item => 
-              <TableItem
-                key={item.id}
-                projectName={item.projectName}
-                clientName={item.clientName}
-                startDate={item.startDate}
-                endDate={item.endDate}
-                status={item.status}
-              />)
+            <TablesList items={filterForm}/>
           }
         </tbody>
       </table>

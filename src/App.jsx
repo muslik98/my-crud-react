@@ -12,7 +12,7 @@ const projects = [
     clientName: 'udin',
     startDate: '2023-01-09',
     endDate: '2024-01-09',
-    status: 'ongoing'
+    status: 'Open'
   },
   {
     id: 'p2',
@@ -20,7 +20,7 @@ const projects = [
     clientName: 'mus',
     startDate: '2022-01-09',
     endDate: '2023-01-09',
-    status: 'ongoing'
+    status: 'Doing'
   }
 ];
 
